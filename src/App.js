@@ -30,11 +30,23 @@ function App() {
     setAppointmentsData((prev) => [newAppointment, ...prev])
   }
 
+  const onFileChange = (e) => {
+    const dataFile = e.target.files[0];
+    let read = new FileReader();
+    read.readAsBinaryString(dataFile);
+    read.onloadend = () => {
+      console.log(read.result)
+      const data = JSON.parse(read.result);
+      setContactsData(data.contacts);
+      setAppointmentsData(data.appointments);
+    }
+  }
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<SharedLayout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home data={{contacts: contactsData, appointments: appointmentsData}} fileImportChange={ onFileChange }/>} />
           <Route path='/contacts' element={<Contacts data={ contactsData } addData={ addContact } />} />
           <Route path='/appointments' element={<Appointments contactsData={ contactsData } appointmentsData={ appointmentsData } addAppointment={ addAppointment} />} />
           <Route path='/AppointmentsReact' element={<Home />} />

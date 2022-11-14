@@ -12,6 +12,10 @@ select, input {
   text-align: center;
 }
 
+#file-import, #export{
+  color:#0AC8CB;
+}
+
 #contact-select {
   display:block;
   border:#404258;
