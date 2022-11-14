@@ -46,7 +46,7 @@ const Appointments = (props) => {
                         <label htmlFor="time">Time</label>
                         <input name="time" value={time} onChange={({target}) => setTime(target.value)} />
                     </div>
-                    <button className="submitButton">
+                    <button className="submitButton" disabled={title==='' || date==='' || time===''}>
                         Submit
                     </button>
                 </form>

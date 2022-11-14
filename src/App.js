@@ -37,6 +37,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='/contacts' element={<Contacts data={ contactsData } addData={ addContact } />} />
           <Route path='/appointments' element={<Appointments contactsData={ contactsData } appointmentsData={ appointmentsData } addAppointment={ addAppointment} />} />
+          <Route path='/AppointmentsReact' element={<Home />} />
           <Route path='*' element={<Error />} />
         </Route>
       </Routes>

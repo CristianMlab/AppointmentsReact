@@ -19,30 +19,29 @@ const Contacts = (props) => {
             (acc, current) => current.name === contactName ? acc + 1 : acc,
             0
         )
-        if(check === 1){
-            return true;
-        }
-        return false;
+        return check !== 1;
     }
+    const checkEmail = () => /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)
+    const checkPhone = () => /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(phone)
 
     return (
         <>
             <section>
-                <h2>Add Contact {checkName() ? '- Name is duplicate' : ''}</h2> 
+                <h2>Add Contact {checkName() ? '' : '- Name is duplicate'}</h2> 
                 <form onSubmit = {handleSubmit}>
                     <div className="inputDiv">
                         <label htmlFor="name">Name</label>
                         <input name="name" value={contactName} onChange={({target}) => setContactName(target.value)}/>
                     </div>
                     <div className="inputDiv">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">Email {checkEmail() || email==='' ? '' : '- invalid address'}</label>
                         <input name="email" value={email} onChange={({target}) => setEmail(target.value)} />
                     </div>
                     <div className="inputDiv">
-                        <label htmlFor="phone-number">Phone Number</label>
+                        <label htmlFor="phone-number">Phone Number {checkPhone() || phone==='' ? '' : '- invalid phone number'}</label>
                         <input name="phone-number" value={phone} onChange={({target}) => setPhone(target.value)} />
                     </div>
-                    <button className="submitButton" disabled={checkName()}>
+                    <button className="submitButton" disabled={!checkName() || !checkEmail() || !checkPhone()}>
                         Submit
                     </button>
                 </form>
