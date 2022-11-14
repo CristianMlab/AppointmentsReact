@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/AppointmentsReact/static/css/main.d4b99db6.css",
-    "main.js": "/AppointmentsReact/static/js/main.7ed97c39.js",
+    "main.css": "/AppointmentsReact/static/css/main.8fff452f.css",
+    "main.js": "/AppointmentsReact/static/js/main.bc3f20b6.js",
     "index.html": "/AppointmentsReact/index.html",
-    "main.d4b99db6.css.map": "/AppointmentsReact/static/css/main.d4b99db6.css.map",
-    "main.7ed97c39.js.map": "/AppointmentsReact/static/js/main.7ed97c39.js.map"
+    "main.8fff452f.css.map": "/AppointmentsReact/static/css/main.8fff452f.css.map",
+    "main.bc3f20b6.js.map": "/AppointmentsReact/static/js/main.bc3f20b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4b99db6.css",
-    "static/js/main.7ed97c39.js"
+    "static/css/main.8fff452f.css",
+    "static/js/main.bc3f20b6.js"
   ]
 }
